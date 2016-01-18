@@ -1,0 +1,24 @@
+{
+  "name": "oma-archive",
+  "description": "Create source archive by scanning modules on the file system.",
+  "main": "index",
+  "version": "1.0.0",
+  "dependencies": {
+    "oma-constants": "^1.0.0",
+    "oma-util": "^1.0.0"
+  },
+  "keywords": [
+    "oma",
+    "open mainframe architecture",
+    "source archive"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-mainframe-architecture/oma-archive.git"
+  },
+  "author": "open.mainframe@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/open-mainframe-architecture/oma-archive/issues"
+  }
+}
