@@ -4,6 +4,7 @@
   "main": "index",
   "version": "1.0.0",
   "dependencies": {
+    "jshint": "^2.9.1",
     "oma-constants": "^1.0.0",
     "oma-util": "^1.0.0"
   },

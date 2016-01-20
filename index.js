@@ -3,6 +3,7 @@
 var path = require('path');
 
 var constants = require('oma-constants');
+var jshint = require('jshint').JSHINT;
 var util = require('oma-util');
 
 var assetPath = {
@@ -114,12 +115,11 @@ function collectSubModules(files, archive, modules, name) {
   });
 }
 
-var lintOptions = constants.tool.jshint;
 function verifyExpression(error, file) {
   return error && util.readFileText(file)
     .then(function (expressionSource) {
-      var jsErrors = util.verifyJavaScript('void ' + expressionSource + ';', lintOptions);
-      jsErrors.forEach(function (jsError) {
+      jshint('void ' + expressionSource + ';', constants.tool.jshint);
+      jshint.errors.slice().forEach(function (jsError) {
         error(file.path + ':' + jsError.line + ':' + jsError.character, jsError.reason);
       });
     });
