@@ -118,9 +118,10 @@ function collectSubModules(files, archive, modules, name) {
 function verifyExpression(error, file) {
   return error && util.readFileText(file)
     .then(function (expressionSource) {
-      jshint('void ' + expressionSource + ';', constants.tool.jshint);
+      jshint('void\n' + expressionSource + '\n;', constants.tool.jshint);
       jshint.errors.slice().forEach(function (jsError) {
-        error(file.path + ':' + jsError.line + ':' + jsError.character, jsError.reason);
+        // adjust for extra first line
+        error(file.path + ':' + (jsError.line - 1) + ':' + jsError.character, jsError.reason);
       });
     });
 }
