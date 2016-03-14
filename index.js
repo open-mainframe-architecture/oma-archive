@@ -111,7 +111,7 @@ function collectSubModules(files, archive, modules, name) {
     modules[subName] = dir;
     var relative = subName + '/' + path.relative(dir, file.path).replace(util.seps, '/');
     util.zipFile(archive, relative, file);
-    collectSubModules(archive, modules, subName).then(function () { cb(null); });
+    collectSubModules(files, archive, modules, subName).then(function () { cb(null); });
   });
 }
 
