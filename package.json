@@ -2,11 +2,11 @@
   "name": "oma-archive",
   "description": "Create source archive by scanning modules on the file system.",
   "main": "index",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "dependencies": {
     "jshint": "^2.9.1",
-    "oma-constants": "^1.0.0",
-    "oma-util": "^1.0.0"
+    "oma-constants": "^2.0.0",
+    "oma-util": "^2.0.0"
   },
   "keywords": [
     "oma",
