@@ -102,7 +102,7 @@ function collectSubModules(files, archive, modules, name) {
 function verifyExpression(error, file) {
   return Promise.resolve(error && util.readFileText(file).then(expressionSource => {
     jshint(`void\n${expressionSource}\n;`, constants.tool.jshint);
-    for (let jsError of jshint.errors.slice()) {
+    for (const jsError of jshint.errors.slice()) {
       // adjust for extra first line
       error(`${file.path}:${jsError.line - 1}:${jsError.character}`, jsError.reason);
     }
